@@ -26,14 +26,11 @@
                     <a href="index.php" class="nav-link" style=color:white>HOME</a>
                 </li>
                 <li>
-                <a href="reles.html" class="nav-link" style=color:white>RELES</a>
+                <a href="reles.php" class="nav-link" style=color:white>RELES</a>
                 </li>
            
                 <li>
                     <a href="definehora.php" class="nav-link" style=color:white>TIMER</a>
-                </li>
-                <li>
-                    <a href="#skils" class="nav-link" style=color:white>-----</a>
                 </li>
             </ul>
         </div>

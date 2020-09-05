@@ -1,3 +1,16 @@
+<?php 
+
+include "class.contro.php";
+include "config.php";
+$controle = new Controle($pdo);
+$exibe_sala = $controle->getStatus_sala();
+$exibe_quarto = $controle->getStatus_quarto();
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -26,14 +39,11 @@
                     <a href="index.php" class="nav-link" style=color:white>HOME</a>
                 </li>
                 <li>
-                <a href="reles.html" class="nav-link" style=color:white>RELES</a>
+                <a href="reles.php" class="nav-link" style=color:white>RELES</a>
                 </li>
            
                 <li>
                     <a href="definehora.php" class="nav-link" style=color:white>TIMER</a>
-                </li>
-                <li>
-                    <a href="#skils" class="nav-link" style=color:white>-----</a>
                 </li>
             </ul>
         </div>
@@ -46,7 +56,8 @@
                 <div class="col-md-6">
                     <div class="card mb-4 box-shadow">
                         <div class="card-body">
-                           <h2>Status Sala</h2>
+                           <h2>Status Sala:</h2>
+                           <?php echo $exibe_sala; ?>
                         </div>
                     </div>
                 </div>
@@ -54,6 +65,7 @@
                         <div class="card mb-4 box-shadow">
                             <div class="card-body">
                             <h2>Status Quarto</h2>
+                            <?php echo $exibe_quarto; ?>
                             </div>
                         </div>
                     </div>

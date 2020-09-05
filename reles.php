@@ -1,3 +1,26 @@
+<?php 
+
+include "class.contro.php";
+include "config.php";
+$controle = new Controle($pdo);
+
+
+if(isset($_POST['RELE01'])){
+    $acao = $_POST['RELE01'];
+    $controle->setStatus_sala($acao);
+}
+
+
+if(isset($_POST['RELE02'])){
+    $acao = $_POST['RELE02'];
+    $controle->setStatus_quarto($acao);
+}
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -28,7 +51,7 @@
                     <a href="index.php" class="nav-link" style=color:white>HOME</a>
                 </li>
                 <li>
-                <a href="reles.html" class="nav-link" style=color:white>RELES</a>
+                <a href="reles.php" class="nav-link" style=color:white>RELES</a>
                 </li>
            
                 <li>
@@ -46,22 +69,26 @@
         <div class="container">
             <h2 class="text-center jumbotron-heading titulosVerdes">Elétrica Pinho</h2>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md">
                     <div class="card mb-4 box-shadow">
                         <div class="card-body">
                            <h2>Sala</h2>
-                           <button type="button" class="btn btn-success btn-lg btn-block">Ligar</button>
-                           <button type="button" class="btn btn-danger btn-lg  btn-block ">Desligar</button>
+                           <form method="POST">
+                                <button type="submit" class="btn btn-success btn-lg btn-block" value="RELE01ON" name="RELE01">Ligar</button>
+                                <button type="submit" class="btn btn-danger btn-lg  btn-block " value="RELE01OF" name="RELE01">Desligar</button>
+                            </form>
                         </div>
                     </div>
                 </div>
-                    <div class="col-md-6">
+                    <div class="col-md">
                         <div class="card mb-4 box-shadow">
                             <div class="card-body">
                             <h2>Quarto</h2>
-                                <button type="button" class="btn btn-success btn-lg btn-block">Ligar</button>
-                                <button type="button" class="btn btn-danger btn-lg  btn-block ">Desligar</button>
-                                </div>
+                            <form method="POST">
+                                <button type="submit" class="btn btn-success btn-lg btn-block" value="RELE02ON" name="RELE02">Ligar</button>
+                                <button type="submit" class="btn btn-danger btn-lg  btn-block " value="RELE02OF" name="RELE02">Desligar</button>
+                            </form>    
+                            </div>
                             </div>
                         </div>
                     </div>
