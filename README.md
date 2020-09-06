@@ -15,6 +15,14 @@ C
 
 
 
+Estou disponível para projetos e JOB nas áreas abaixo 
+
+Programação back end PHP, MYSQL,  Front-end  CSS,HTML, Bootstrap.
+Tenho interesse nas áreas de TI em geral Suporte,  Técnico em informática , Técnico em Eletrônica e etc, tenho experiencia em instalações elétricas residenciais. 
+
+
+
+
 
 Abaixo vídeo no YouTube 
 https://youtu.be/IrRCW9eVtA0
