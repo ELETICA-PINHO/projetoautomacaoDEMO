@@ -7,7 +7,7 @@ $exibe_sala = $controle->getStatus_sala();
 $exibe_quarto = $controle->getStatus_quarto();
 
 
-
+//tetseejfjfcomentari
 
 ?>
 
