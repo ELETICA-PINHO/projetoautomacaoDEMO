@@ -6,6 +6,10 @@ $exibe_sala = $controle->getStatus_sala();
 $exibe_quarto = $controle->getStatus_quarto();
 
 
+<<<<<<< HEAD
+=======
+//tetseejfjfcomentari
+>>>>>>> beb9f7702c169ae3f8ccb8a14e3fe8662805f4db
 
 ?>
 

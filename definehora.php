@@ -47,7 +47,7 @@ if($sql->rowCount () > 0){
         </div>
     </nav>
 <div class="album py-5 bg-light ">
-        <div class="container">
+        <div class="container">  
             <h2 class="text-center jumbotron-heading titulosVerdes">Elétrica Pinho</h2>
             <div class="row">
                 <div class="col-md">
