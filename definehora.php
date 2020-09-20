@@ -1,12 +1,39 @@
 <?php 
 include "conf/conf.php";
 
+
+if(isset($_POST['opcao']) && !empty($_POST['opcao'])){
+
+    $opcao = $_POST['opcao'];
+    $alarme = $_POST['alarme'];
+    $botao =  $_POST['botao'];
+
+    if($opcao == 'ligar'){
+        $sql = "UPDATE status_despertador_sala SET hora_ligar = '$alarme',  status_ligar = '$botao' ";
+         $sql = $pdo->query($sql);
+
+    }
+
+    if($opcao == 'desligar'){
+        $sql = "UPDATE status_despertador_sala SET hora_desligar = '$alarme',  status_desligar = '$botao' ";
+         $sql = $pdo->query($sql);
+
+    }
+
+
+
+}
+
+
+
 $sql = "SELECT * FROM status_despertador_sala";
 $sql = $pdo->query($sql);
 if($sql->rowCount () > 0){
     $sql = $sql->fetch();
     
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -59,19 +86,20 @@ if($sql->rowCount () > 0){
                            <p>Status Desliga: <?php echo $despertador = $sql['status_desligar'];?></p>   
                            <p>Timer: <?php echo $despertador = $sql['hora_desligar'];?></p>
                            <form method="POST">
+                                <div class="form-group">
+                                <select name="opcao" id="" class="form-control">
+                                    <option value=""></option>
+                                    <option value="ligar">Ligar</option>
+                                    <option value="desligar">Desligar</option>
+                                </select>
+                                </div>
                                <div class="form-group">
-                                    <label for="">Alarme Ligar</label>
-                                    <input type="time" name="time_liga" id="" class="form-control">
+                                    <label for="">Alarme</label>
+                                    <input type="time" name="alarme" id="" class="form-control">
                                </div>
                                 <div class="form-group">
-                                    <label for="">Alarme desligar</label>
-                                    <input type="time" name="time_desliga" id=""class="form-control" >
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-success btn-lg btn-block" value="" name="">Ativar Ligar</button>
-                                    <button type="submit" class="btn btn-danger btn-lg btn-block" value="" name="">Desativar ligar</button>
-                                    <button type="submit" class="btn btn-success btn-lg btn-block" value="" name="">Ativar Ligar</button>
-                                    <button type="submit" class="btn btn-danger btn-lg btn-block" value="" name="">Desativar ligar</button>
+                                    <button type="submit" class="btn btn-success btn-lg btn-block" value="ON" name="botao">Ativar</button>
+                                    <button type="submit" class="btn btn-danger btn-lg btn-block" value="OF" name="botao">Desativar</button>
                                 </div>
                             </form>
                         </div>

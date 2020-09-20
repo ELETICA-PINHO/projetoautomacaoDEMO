@@ -10,7 +10,7 @@ echo $data = date("H:i");
 //$despertador_liga = "";
 
 
-$sql = "SELECT * FROM status_despertador_sala";
+$sql = "SELECT * FROM status_despertador_sala WHERE status_desligar = 'ON' ";
 $sql = $pdo->query($sql);
 if($sql->rowCount () > 0){
     $sql = $sql->fetch();
@@ -27,7 +27,7 @@ if($sql->rowCount () > 0){
 
 
 
-$sql = "SELECT * FROM status_despertador_sala";
+$sql = "SELECT * FROM status_despertador_sala WHERE status_ligar = 'ON' ";
 $sql = $pdo->query($sql);
 if($sql->rowCount () > 0){
     $sql = $sql->fetch();
