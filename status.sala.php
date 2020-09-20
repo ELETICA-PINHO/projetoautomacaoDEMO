@@ -1,7 +1,7 @@
 <?php
 
-include "class.contro.php";
-include "config.php";
+
+include "conf/conf.php";
 
 
 /*

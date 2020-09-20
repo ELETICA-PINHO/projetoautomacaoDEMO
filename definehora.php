@@ -1,3 +1,14 @@
+<?php 
+include "conf/conf.php";
+
+$sql = "SELECT * FROM status_despertador_sala";
+$sql = $pdo->query($sql);
+if($sql->rowCount () > 0){
+    $sql = $sql->fetch();
+    
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -35,6 +46,68 @@
             </ul>
         </div>
     </nav>
+<div class="album py-5 bg-light ">
+        <div class="container">
+            <h2 class="text-center jumbotron-heading titulosVerdes">Elétrica Pinho</h2>
+            <div class="row">
+                <div class="col-md">
+                    <div class="card mb-4 box-shadow">
+                        <div class="card-body">
+                           <h2>Sala</h2>
+                           <p>Status Liga: <?php echo $despertador = $sql['status_ligar'];?></p></p>   
+                           <p>Timer: <?php echo $despertador = $sql['hora_ligar'];?></p>
+                           <p>Status Desliga: <?php echo $despertador = $sql['status_desligar'];?></p>   
+                           <p>Timer: <?php echo $despertador = $sql['hora_desligar'];?></p>
+                           <form method="POST">
+                               <div class="form-group">
+                                    <label for="">Alarme Ligar</label>
+                                    <input type="time" name="time_liga" id="" class="form-control">
+                               </div>
+                                <div class="form-group">
+                                    <label for="">Alarme desligar</label>
+                                    <input type="time" name="time_desliga" id=""class="form-control" >
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-success btn-lg btn-block" value="" name="">Ativar Ligar</button>
+                                    <button type="submit" class="btn btn-danger btn-lg btn-block" value="" name="">Desativar ligar</button>
+                                    <button type="submit" class="btn btn-success btn-lg btn-block" value="" name="">Ativar Ligar</button>
+                                    <button type="submit" class="btn btn-danger btn-lg btn-block" value="" name="">Desativar ligar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-md">
+                        <div class="card mb-4 box-shadow">
+                            <div class="card-body">
+                            <h2>Quarto</h2>
+                            <form method="POST">
+                                <div class="form-group">
+                                        <label for="">Alarme Ligar</label>
+                                        <input type="time" name="time_liga" id="" class="form-control">
+                                </div>
+                                    <div class="form-group">
+                                        <label for="">Alarme desligar</label>
+                                        <input type="time" name="time_desliga" id=""class="form-control" >
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-success btn-lg btn-block" value="" name="">Ativar</button>
+                                        <button type="submit" class="btn btn-danger btn-lg btn-block" value="" name="">Desativar</button>
+                                    </div>
+                            </form>    
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> 
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
  
     
 </body>

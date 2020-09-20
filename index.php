@@ -1,11 +1,9 @@
 <?php 
 
-include "class.contro.php";
-include "config.php";
+include "conf\conf.php";
 $controle = new Controle($pdo);
 $exibe_sala = $controle->getStatus_sala();
 $exibe_quarto = $controle->getStatus_quarto();
-
 
 
 
