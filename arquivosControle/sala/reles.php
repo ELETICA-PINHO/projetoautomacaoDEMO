@@ -2,11 +2,22 @@
 
 include "conf/conf.php";
 $controle = new Controle($pdo);
+$exibe_sala = $controle->getStatus_sala();
+$valor = $exibe_sala;
+
+
+$hora = date("H:i");
+$data = date("d/n/Y");
+$exevia = "WEB";
+
+
+
 
 
 if(isset($_POST['RELE01'])){
     $acao = $_POST['RELE01'];
     $controle->setStatus_sala($acao);
+    $controle->setStatus_sala_completo($acao, $exevia, $hora, $data);
 }
 
 
@@ -31,6 +42,7 @@ if(isset($_POST['RELE02'])){
     <link rel="stylesheet" href="assets/css/minha.css">
     <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
+   
 
 </head>
 <body>
@@ -71,10 +83,25 @@ if(isset($_POST['RELE02'])){
                 <div class="col-md">
                     <div class="card mb-4 box-shadow">
                         <div class="card-body">
-                           <h2>Sala</h2>
+                           
+                           <?php
+        $class = "" ;
+        if ($valor == "RELE01ON"){
+        $class =  'btn btn-success disabled' ;
+        }
+        elseif ($valor == "RELE01OF"){
+            $class =  'btn btn-danger disabled' ;
+        }
+         ?> 
+
+
+
+<h2>SALA <?php  printf('<button type="button" class="btn '.$class.' ">%s</button>',  $exibe_sala = $controle->getStatus_sala()); ?></h2> 
                            <form method="POST">
                                 <button type="submit" class="btn btn-success btn-lg btn-block" value="RELE01ON" name="RELE01">Ligar</button>
-                                <button type="submit" class="btn btn-danger btn-lg  btn-block " value="RELE01OF" name="RELE01">Desligar</button>
+                                <button type="submit"  class="btn btn-danger btn-lg  btn-block " value="RELE01OF" name="RELE01">Desligar</button>
+                                
+                          
                             </form>
                         </div>
                     </div>
@@ -100,3 +127,12 @@ if(isset($_POST['RELE02'])){
 
 
 </div>
+
+
+
+
+
+
+                                      
+
+           
