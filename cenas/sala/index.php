@@ -186,15 +186,6 @@ $valor = $exibe_sala;
 
 
 
-                    <div class="col-md-6">
-                        <div class="card mb-4 box-shadow">
-                            <div class="card-body">
-                            <h2>Status Quarto</h2>
-                            <?php echo $exibe_quarto; ?>
-                            </div>
-                        </div>
-                    </div>
-
                 </div> 
             </div>
         </div>
