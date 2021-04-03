@@ -1,6 +1,6 @@
 <?php 
 
-include "conf/conf.php";
+include("../conf/conf.php");
 $controle = new Controle($pdo);
 $exibe_sala = $controle->getStatus_sala();
 $valor = $exibe_sala;
@@ -38,8 +38,8 @@ if(isset($_POST['RELE02'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lampadas</title>
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/minha.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/minha.css">
     <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
    

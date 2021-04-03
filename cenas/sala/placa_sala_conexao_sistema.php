@@ -1,6 +1,6 @@
 <?php
 
-include "conf\conf.php";
+include("../conf/conf.php");
 $controle = new Controle($pdo);
 
 $hora = date("H:i");

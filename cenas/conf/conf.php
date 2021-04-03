@@ -1,7 +1,10 @@
 <?php 
 date_default_timezone_set('america/sao_paulo');
 
-include "class/class.contro.php";
+
+
+include("../class/class.contro.php");
+
 
 $dbuser = "servidor";
 $dbpassword = "servidor";

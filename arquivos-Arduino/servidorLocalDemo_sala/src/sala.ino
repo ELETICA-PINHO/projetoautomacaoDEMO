@@ -27,17 +27,17 @@ int cont = 0;
 int porta_servidor = 1213;
 char *host = "45.179.242.3" ;
 String strhost = "localhost";
-String URL_COMPLETA_ENVIA = "http://localhost/projetoautomacaoDEMO/cenas/quarto/control.msg.php/";
-String URL_COMPLETA_RECEBE = "http://localhost/projetoautomacaoDEMO/cenas/quarto/status.php/";
-String URL_COMPLETA_ONLINE = "http://localhost/projetoautomacaoDEMO/cenas/quarto/placa_conexao_online.php";
-String URL_COMPLETA_SISTEMA = "http://localhost/projetoautomacaoDEMO/cenas/quarto/placa_conexao_sistema.php";   //CAMINHO DO SERVIDOR
+String URL_COMPLETA_ENVIA = "http://localhost/projetoautomacaoDEMO/cenas/sala/control.msg.sala.php/";
+String URL_COMPLETA_RECEBE = "http://localhost/projetoautomacaoDEMO/cenas/sala/status.sala.php/";
+String URL_COMPLETA_ONLINE = "http://localhost/projetoautomacaoDEMO/cenas/sala/placa_sala_conexao_online.php";
+String URL_COMPLETA_SISTEMA = "http://localhost/projetoautomacaoDEMO/cenas/sala/placa_sala_conexao_sistema.php";   //CAMINHO DO SERVIDOR
 
 
 
-String URLRELE1 = "/projetoautomacaoDEMO/cenas/quarto/control.msg.php";
-String URL_RECEBE_DADOS = "/projetoautomacaoDEMO/cenas/quarto/status.php";
-String URL_ONLINE = "/projetoautomacaoDEMO/cenas/quarto/placa_conexao_online.php";
-String URL_SISTEMA = "/projetoautomacaoDEMO/cenas/quarto/placa_conexao_sistema.php";
+String URLRELE1 = "/projetoautomacaoDEMO/cenas/sala/control.msg.sala.php";
+String URL_RECEBE_DADOS = "/projetoautomacaoDEMO/cenas/sala/status.sala.php";
+String URL_ONLINE = "/projetoautomacaoDEMO/cenas/sala/placa_sala_conexao_online.php";
+String URL_SISTEMA = "/projetoautomacaoDEMO/cenas/sala/placa_sala_conexao_sistema.php";
 
 
 //YYY

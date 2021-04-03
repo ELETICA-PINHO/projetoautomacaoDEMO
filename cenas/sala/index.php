@@ -1,6 +1,6 @@
 <?php 
+include("../conf/conf.php");
 
-include "conf\conf.php";
 $controle = new Controle($pdo);
 $exibe_sala = $controle->getStatus_sala();
 $exibe_sala_completo = $controle->getStatus_sala_completo();
@@ -8,7 +8,6 @@ $exibe_sala_online = $controle->getStatus_sala_online();
 $exibe_sala_sistema = $controle->getStatus_sala_sistema();
 $exibe_quarto = $controle->getStatus_quarto();
 $valor = $exibe_sala;
-
 
 
 ?>
@@ -19,9 +18,9 @@ $valor = $exibe_sala;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
-    <link rel="stylesheet" href="assets/css/minha.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/minha.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/jquery.2.1.3.min.js"></script>
    

@@ -88,20 +88,7 @@ public function getStatus_sala_completo(){
 
 
 
-    /* 
-a função getStatus_quarto()
 
-retorna status do valor que está no bd  na coluna  status_quarto  os 02 possíveis valores  RELE02ON  ou RELE020F
-
-*/
-public function getStatus_quarto(){
-    $sql = $this->pdo->prepare("SELECT * FROM status");
-    $sql->execute();
-    if($sql->rowCount() > 0){
-        $sql = $sql->fetch();
-        return $sql['status_quarto'];
-    }
-}
 
 /* 
 a função setStatus_sala($p)
@@ -154,32 +141,161 @@ através da variável que é passado ao char a função
 
 
 
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+
+public function getStatus_quarto(){
+    $sql = $this->pdo->prepare("SELECT * FROM status");
+    $sql->execute();
+    if($sql->rowCount() > 0){
+        $sql = $sql->fetch();
+        return $sql['status_quarto'];
+    }
+}
+
+//  função getStatus_sala_completo  mostra dois ultimos estados da placa 
+
+
+public function getStatus_quarto_completo(){
+$array = array();
+$sql = $this->pdo->prepare("SELECT * FROM status_quarto_completo ORDER BY registro DESC LIMIT 2"); 
+$sql->execute();
+
+if($sql->rowCount() > 0){
+    $array = $sql->fetchAll();
+    return $array;
+}else{
+    return $array;
+}
+   
+} 
+
+
+
+public function getStatus_quarto_online(){
+    $array = array();
+    $sql = $this->pdo->prepare("SELECT * FROM status_quarto_online ORDER BY id DESC LIMIT 1"); 
+    $sql->execute();
+
+    if($sql->rowCount() > 0){
+        $array = $sql->fetchAll();
+        return $array;
+    }else{
+        return $array;
+    }
+       
+    } 
+
+
+    public function getStatus_quarto_sistema(){
+        $array = array();
+        $sql = $this->pdo->prepare("SELECT * FROM status_quarto_sistema ORDER BY id DESC LIMIT 2"); 
+        $sql->execute();
+    
+        if($sql->rowCount() > 0){
+            $array = $sql->fetchAll();
+            return $array;
+        }else{
+            return $array;
+        }
+           
+        } 
 
 
 
 
 
-  
 
 
 
-    /* 
-a função setStatus_quarto($p)
 
-efetua um update na tabela status no campo status_quarto  com dois possíveis valores RELE02ON  ou RELE020F
+
+
+
+/* 
+a função setStatus_sala($p)
+
+efetua um update na tabela status no campo status_sala  com dois possíveis valores RELE01ON  ou RELE010F
 
 através da variável que é passado ao char a função 
 
 */
 
-    public function setStatus_quarto($p){
-        $sql = $this->pdo->prepare("UPDATE status SET status_quarto = :status_quarto");
-        $sql->bindValue(":status_quarto", $p);
-        $sql->execute();
-    }
+
+
+public function setStatus_quarto($p){
+    $sql = $this->pdo->prepare("UPDATE status SET status_quarto = :status_quarto");
+    $sql->bindValue(":status_quarto", $p);
+    $sql->execute();
+}
+
+
+
+public function setStatus_quarto_completo($status, $exevia, $hora, $data){
+
+    $sql = $this->pdo->prepare("INSERT INTO status_quarto_completo (status, registro, exevia, hora, data) VALUES (:status, NULL, :exevia, :hora, :data) ");
+    $sql->bindValue(":status", $status);
+    $sql->bindValue(":exevia", $exevia);
+    $sql->bindValue(":hora", $hora);
+    $sql->bindValue(":data", $data);
+    $sql->execute();
+}
+
+
+public function setStatus_quarto_online($status, $hora, $data){
+
+    $sql = $this->pdo->prepare("INSERT INTO status_quarto_online (status, id, hora, data) VALUES (:status, NULL, :hora, :data) ");
+    $sql->bindValue(":status", $status);
+    $sql->bindValue(":hora", $hora);
+    $sql->bindValue(":data", $data);
+    $sql->execute();
+}
+
+
+public function setStatus_quarto_sistema($status, $hora, $data){
+
+    $sql = $this->pdo->prepare("INSERT INTO status_quarto_sistema (status, id, hora, data) VALUES (:status, NULL, :hora, :data) ");
+    $sql->bindValue(":status", $status);
+    $sql->bindValue(":hora", $hora);
+    $sql->bindValue(":data", $data);
+    $sql->execute();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
+
 
 
 ?>
