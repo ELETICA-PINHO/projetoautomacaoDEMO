@@ -24,7 +24,7 @@ int conexao = 0;
 int cont = 0;
 
 //-------------------------------- CONFIGURAÇÕES DE DOMINIO SERVIDOR URL -----------------------------
-int porta_servidor = 1213;
+int porta_servidor = 80;
 char *host = "ip"  ;  // ip do pc que roda servidor ou seu ip publico
 String strhost = "localhost";
 String URL_COMPLETA_ENVIA = "http://localhost/projetoautomacaoDEMO/reles.php/";
