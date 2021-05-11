@@ -11,8 +11,8 @@
 
 //-------------------VARIABLES GLOBALES--------------------------
 int contconexion = 0;
-const char *ssid = "HOME";
-const char *password = "#EletricaPinho#";
+const char *ssid = "iot";
+const char *password = "iot12345";
 unsigned long previousMillis = 0;
 
 
@@ -25,7 +25,7 @@ int cont = 0;
 
 //-------------------------------- CONFIGURAÇÕES DE DOMINIO SERVIDOR URL -----------------------------
 int porta_servidor = 1213;
-char *host = "45.179.242.3" ;
+char *host = "ip"  ;  // ip do pc que roda servidor ou seu ip publico
 String strhost = "localhost";
 String URL_COMPLETA_ENVIA = "http://localhost/projetoautomacaoDEMO/reles.php/";
 String URL_COMPLETA_RECEBE = "http://localhost/projetoautomacaoDEMO/status.sala.php/";
