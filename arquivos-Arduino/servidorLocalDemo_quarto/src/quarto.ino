@@ -24,7 +24,7 @@ int conexao = 0;
 int cont = 0;
 
 //-------------------------------- CONFIGURAÇÕES DE DOMINIO SERVIDOR URL -----------------------------
-int porta_servidor = 1213;
+int porta_servidor = 80;
 char *host = "****" ;
 String strhost = "localhost";
 String URL_COMPLETA_ENVIA = "http://localhost/projetoautomacaoDEMO/cenas/quarto/control.msg.php/";
