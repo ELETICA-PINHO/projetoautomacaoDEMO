@@ -18,9 +18,9 @@
 
 
 
-                <a href="http://eletricapinho.com.br:1213/projetoautomacaodemo/cenas/quarto/">quato</a>
+                <a href="http://seu.dominio/projetoautomacaodemo/cenas/quarto/">quato</a>
 
-                <a href="http://eletricapinho.com.br:1213/projetoautomacaodemo/cenas/sala/">sala</a>
+                <a href="http:/seu.dominio//projetoautomacaodemo/cenas/sala/">sala</a>
                     
 
 
